@@ -1,0 +1,24 @@
+<h1>Listing Costs</h1>
+<%= link_to 'New cost', new_user_cost_path(current_user, @cost) %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @costs.each do |cost| %>
+    <tr>
+      <td><%= cost.title %></td>
+      <td><%= cost.description %></td>
+      <td><%= cost.price %></td>
+      <td><%= link_to 'Show', user_cost_path(current_user, cost) %></td>
+      <td><%= link_to 'Edit', edit_user_cost_path(current_user, cost) %></td>
+      <td><%= link_to 'Destroy', user_cost_path(current_user, cost),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+

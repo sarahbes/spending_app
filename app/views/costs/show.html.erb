@@ -1,0 +1,21 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @cost.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @cost.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @cost.price %>
+</p>
+ 
+<h2>Add a cost:</h2>
+<%= render 'costs/form' %>
+ 
+<%= link_to 'Edit', edit_user_cost_path(current_user, @cost) %> |
+<%= link_to 'Back', user_costs_path(current_user) %>
